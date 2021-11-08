@@ -99,9 +99,6 @@ namespace UndyingWave
         {
             RagdollPart rp = collisionInstance.damageStruct.hitRagdollPart;
 
-            Debug.Log("Undying brain " + rp.ragdoll.creature.brain.instance.id);
-            Debug.Log("Undying braintree " + rp.ragdoll.creature.brain.instance.tree.id);
-
             if (collisionInstance.damageStruct.baseDamage == 0xDEAD2BAD) return;
 
             creature_to_max_health();

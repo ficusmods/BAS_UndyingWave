@@ -16,7 +16,6 @@ namespace UndyingWave
         protected Side side = Side.Right;
         public override void Init(Creature p_creature, Blackboard p_blackboard)
         {
-            Debug.Log("Is limb cut off init");
             base.Init(p_creature, p_blackboard);
             this.creature = p_creature;
         }
@@ -32,7 +31,6 @@ namespace UndyingWave
             {
                 ret = creature.handLeft.isSliced;
             }
-            Debug.Log("Is limb cut off? " + ret);
             return ret;
         }
     }
