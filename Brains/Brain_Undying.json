@@ -45,10 +45,10 @@
       "strafeMaxDelay": 2.0,
       "samplePositionCircleSteps": 6,
       "locomotionOverride": false,
-      "locomotionSpeedMultiplier": 2,
-      "locomotionBackwardSpeedMultiplier": 2,
-      "locomotionStrafeSpeedMultiplier": 2,
-      "locomotionRunSpeedMultiplier": 2
+      "locomotionSpeedMultiplier": 1.0,
+      "locomotionBackwardSpeedMultiplier": 1.0,
+      "locomotionStrafeSpeedMultiplier": 1.0,
+      "locomotionRunSpeedMultiplier": 1.0
     },
     {
       "$type": "ThunderRoad.BrainModuleMelee, ThunderRoad",
@@ -216,7 +216,7 @@
       }
     },
     {
-      "$type": "UndyingWave.BrainModuleGrabbed, UndyingWave",
+      "$type": "ThunderRoad.BrainModuleGrabbed, ThunderRoad",
       "freeOneHand": true,
       "freeOneHandDelay": 2.0,
       "freeBothHand": true,
@@ -447,7 +447,7 @@
       "stabAnimationId": "HumanStabDeaths"
     },
     {
-      "$type": "UndyingWave.BrainModuleElectrocute, UndyingWave",
+      "$type": "ThunderRoad.BrainModuleElectrocute, ThunderRoad",
       "deadRotationSpringRange": {
         "x": 10,
         "y": 100
