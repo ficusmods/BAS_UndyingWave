@@ -21,10 +21,13 @@ namespace UndyingWave
 
         private void EventManager_onCreatureSpawn(Creature creature)
         {
-            if (!creature.gameObject.TryGetComponent<UndyingCreature>(out UndyingCreature ur))
+            if (!creature.isPlayer)
             {
-                var uc = creature.gameObject.AddComponent<UndyingCreature>();
-                uc.dieOnHeadChop = dieOnHeadChop;
+                if (!creature.gameObject.TryGetComponent<UndyingCreature>(out UndyingCreature ur))
+                {
+                    var uc = creature.gameObject.AddComponent<UndyingCreature>();
+                    uc.dieOnHeadChop = dieOnHeadChop;
+                }
             }
         }
     }
