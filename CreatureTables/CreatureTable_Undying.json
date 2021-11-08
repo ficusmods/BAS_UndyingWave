@@ -1,0 +1,356 @@
+{
+  "$type": "ThunderRoad.CreatureTable, ThunderRoad",
+  "id": "UndyingCreatureTable",
+  "saveFolder": "bas",
+  "version": 1,
+  "description": null,
+  "linkedToGenderRatio": false,
+  "minMaxDifficulty": {
+    "x": 0,
+    "y": 0
+  },
+  "drops": [
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Gladiator1H",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "GladiatorRogue",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "GladiatorBerzerker",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Gladiator1HShield",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "GladiatorArcher",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "GladiatorBattlemage",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Knight1H",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "KnightRogue",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "KnightBerzerker",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Knight1HShield",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "KnightArcher",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "KnightBattlemage",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Bandit1H",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "BanditRogue",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "BanditBerzerker",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Bandit1HShield",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "BanditArcher",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "BanditBattlemage",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatures",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": true,
+      "overrideContainerID": "Mage",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "probabilityWeights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

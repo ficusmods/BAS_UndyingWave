@@ -1,0 +1,50 @@
+{
+  "$type": "ThunderRoad.CreatureTable, ThunderRoad",
+  "id": "UndyingCreatures",
+  "saveFolder": "bas",
+  "version": 1,
+  "description": null,
+  "linkedToGenderRatio": true,
+  "minMaxDifficulty": {
+    "x": 0,
+    "y": 0
+  },
+  "drops": [
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Creature",
+      "referenceID": "UndyingFemale",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": true,
+      "overrideBrainID": "UndyingBrain",
+      "probabilityWeights": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ]
+    },
+    {
+      "$type": "ThunderRoad.CreatureTable+Drop, ThunderRoad",
+      "reference": "Creature",
+      "referenceID": "UndyingMale",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": true,
+      "overrideBrainID": "UndyingBrain",
+      "probabilityWeights": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "$type": "ThunderRoad.WaveData, ThunderRoad",
+  "id": "Undying1",
+  "saveFolder": "bas",
+  "version": 2,
+  "category": "1Undying",
+  "title": "1Undying",
+  "description": "Undying enemies",
+  "loop": true,
+  "maxAlive": 5,
+  "alwaysAvailable": false,
+  "waveSelectors": [
+    "Arena",
+    "Ruins",
+    "Market",
+    "Canyon",
+    "Citadel"
+  ],
+  "playerHealthMultiplier": 1.0,
+  "enemiesHealthMultiplier": 1.0,
+  "groups": [
+    {
+      "$type": "ThunderRoad.WaveData+Group, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatureTable",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "overrideMaxMelee": true,
+      "overrideMaxMeleeCount": 2,
+      "minMaxCount": {
+        "x": 1,
+        "y": 1
+      },
+      "spawnPointIndex": -1,
+      "conditionStepIndex": -1,
+      "conditionThreshold": 0
+    },
+    {
+      "$type": "ThunderRoad.WaveData+Group, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatureTable",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "overrideMaxMelee": true,
+      "overrideMaxMeleeCount": 2,
+      "minMaxCount": {
+        "x": 1,
+        "y": 1
+      },
+      "spawnPointIndex": -1,
+      "conditionStepIndex": -1,
+      "conditionThreshold": 0
+    },
+    {
+      "$type": "ThunderRoad.WaveData+Group, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatureTable",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "overrideMaxMelee": true,
+      "overrideMaxMeleeCount": 2,
+      "minMaxCount": {
+        "x": 1,
+        "y": 1
+      },
+      "spawnPointIndex": -1,
+      "conditionStepIndex": -1,
+      "conditionThreshold": 0
+    },
+    {
+      "$type": "ThunderRoad.WaveData+Group, ThunderRoad",
+      "reference": "Table",
+      "referenceID": "UndyingCreatureTable",
+      "overrideFaction": false,
+      "factionID": 0,
+      "overrideContainer": false,
+      "overrideContainerID": "",
+      "overrideBrain": false,
+      "overrideBrainID": "",
+      "overrideMaxMelee": true,
+      "overrideMaxMeleeCount": 2,
+      "minMaxCount": {
+        "x": 1,
+        "y": 1
+      },
+      "spawnPointIndex": -1,
+      "conditionStepIndex": -1,
+      "conditionThreshold": 0
+    }
+  ]
+}

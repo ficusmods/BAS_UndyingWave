@@ -1,0 +1,61 @@
+{
+  "$type": "ThunderRoad.AI.BehaviorTreeData, ThunderRoad",
+  "id": "Undying",
+  "saveFolder": "bas",
+  "version": 0,
+  "type": "MasterTree",
+  "rootNode": {
+    "$type": "ThunderRoad.AI.Control.Selector, ThunderRoad",
+    "evaluateAllNodesOnCycle": true,
+    "childs": [
+      {
+        "$type": "ThunderRoad.AI.Decorator.IfCondition, ThunderRoad",
+        "operation": "AND",
+        "ifConditions": [
+          {
+            "$type": "ThunderRoad.AI.Condition.BlackboardValue, ThunderRoad",
+            "variableName": "ForceFlee",
+            "variableType": "Bool",
+            "variableComparator": "Equal",
+            "comparedValue": 0.0
+          }
+        ],
+        "ifNotConditions": null,
+        "child": {
+          "$type": "ThunderRoad.AI.ChildTreeNode, ThunderRoad",
+          "reference": "ForceID",
+          "childTreeID": "Flee",
+          "childTreeName": null
+        }
+      },
+      {
+        "$type": "ThunderRoad.AI.ChildTreeNode, ThunderRoad",
+        "reference": "ForceID",
+        "childTreeID": "UndyingCombat",
+        "childTreeName": null
+      },
+      {
+        "$type": "ThunderRoad.AI.ChildTreeNode, ThunderRoad",
+        "reference": "ForceID",
+        "childTreeID": "HumanAlert",
+        "childTreeName": null
+      },
+      {
+        "$type": "ThunderRoad.AI.ChildTreeNode, ThunderRoad",
+        "reference": "ForceID",
+        "childTreeID": "HumanInvestigate",
+        "childTreeName": null
+      },
+      {
+        "$type": "ThunderRoad.AI.ChildTreeNode, ThunderRoad",
+        "reference": "ForceID",
+        "childTreeID": "Patrol",
+        "childTreeName": null
+      },
+      {
+        "$type": "ThunderRoad.AI.Action.SetBrainState, ThunderRoad",
+        "brainState": "Idle"
+      }
+    ]
+  }
+}
