@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace UndyingWave
 {
-    class UndyingCreature : MonoBehaviour
+    public class UndyingCreatureModule : MonoBehaviour
     {
         public bool dieOnHeadChop = true;
         public Creature creature;
@@ -27,7 +27,7 @@ namespace UndyingWave
 
         public void creature_to_max_health()
         {
-            this.creature.maxHealth = float.PositiveInfinity;
+            this.creature.maxHealth = float.MaxValue;
             this.creature.currentHealth = this.creature.maxHealth;
         }
 
@@ -46,7 +46,7 @@ namespace UndyingWave
                 || this.creature.ragdoll.state == Ragdoll.State.Disabled
                 || this.creature.ragdoll.state == Ragdoll.State.Kinematic)
                 return false;
-            if(!this.creature.ragdoll.headPart.isSliced) return false;
+            if (!this.creature.ragdoll.headPart.isSliced) return false;
 
             return true;
         }
@@ -81,6 +81,7 @@ namespace UndyingWave
 
         private void kill_myself()
         {
+            Logger.Detailed("Killing undying {0} ({1}, {2})", creature.name, creature.creatureId, creature.GetInstanceID());
             CollisionInstance killing_collision = new CollisionInstance(new DamageStruct(DamageType.Energy, 0xDEAD2BAD));
             this.creature.maxHealth = 0xDEAD2BAD - 1.0f;
             this.creature.currentHealth = creature.maxHealth;

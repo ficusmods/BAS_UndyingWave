@@ -31,11 +31,11 @@ namespace UndyingWave
         {
             if (!creature.isPlayer)
             {
-                if (!creature.gameObject.TryGetComponent<UndyingCreature>(out UndyingCreature ur))
+                if (!creature.gameObject.TryGetComponent<UndyingCreatureModule>(out UndyingCreatureModule ur))
                 {
                     if (creature.data.id.StartsWith("Undying"))
                     {
-                        var uc = creature.gameObject.AddComponent<UndyingCreature>();
+                        var uc = creature.gameObject.AddComponent<UndyingCreatureModule>();
                         uc.dieOnHeadChop = dieOnHeadChop;
                     }
                 }
