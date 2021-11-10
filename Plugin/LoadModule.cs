@@ -12,9 +12,17 @@ namespace UndyingWave
 {
     public class LoadModule : LevelModule
     {
+        public string mod_version = "0.0";
+        public string mod_name = "UnnamedMod";
+        public string logger_level = "Basic";
+
         public bool dieOnHeadChop = true;
+
         public override IEnumerator OnLoadCoroutine()
         {
+            Logger.init(mod_name, mod_version, logger_level);
+            Logger.Basic("Loading " + mod_name);
+
             EventManager.onCreatureSpawn += EventManager_onCreatureSpawn;
             return base.OnLoadCoroutine();
         }
