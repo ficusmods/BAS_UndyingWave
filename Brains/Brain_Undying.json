@@ -216,7 +216,7 @@
       }
     },
     {
-      "$type": "ThunderRoad.BrainModuleGrabbed, ThunderRoad",
+      "$type": "UndyingWave.BrainModuleGrabbed, UndyingWave",
       "freeOneHand": true,
       "freeOneHandDelay": 2.0,
       "freeBothHand": true,
