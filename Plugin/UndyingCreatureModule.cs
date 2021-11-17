@@ -101,8 +101,6 @@ namespace UndyingWave
 
         private void Creature_OnDamageEvent(CollisionInstance collisionInstance)
         {
-            RagdollPart rp = collisionInstance.damageStruct.hitRagdollPart;
-
             creature_to_max_health();
             if (collisionInstance.damageStruct.baseDamage == 0xDEAD2BAD) return;
 
