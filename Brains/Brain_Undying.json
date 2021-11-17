@@ -15,6 +15,10 @@
       "$type": "ThunderRoad.BrainModuleSpeak, ThunderRoad",
       "audioEnabled": true,
       "audioVolume": 0.7,
+      "audioPitchRange": {
+        "x": 1.0,
+        "y": 1.0
+      },
       "audioFallVelocityThreshold": 5.0,
       "audioAttackChance": 0.7,
       "audioHitChance": 1.0,
@@ -158,6 +162,10 @@
       "hearMaxDistance": 15.0,
       "hearMinNoiseRatio": 0.25,
       "hearRememberDuration": 30.0,
+      "detectAlertednessThreshold": 10.0,
+      "alertednessLossPerSec": 1.0,
+      "enemyInFOVCycleValue": 3.33,
+      "soundHeardScalableCycleValue": 6.66,
       "defenseColliderRadius": 0.6,
       "defenseColliderHeightMultiplier": 1.0
     },
