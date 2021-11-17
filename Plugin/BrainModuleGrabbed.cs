@@ -27,7 +27,12 @@ namespace UndyingWave
 
             if(handlers.Count > 0)
             {
-                base.OnGrab(ragdollHand, handleRagdoll);
+                Logger.Detailed("Grab refresh");
+                Refresh();
+            }
+            else
+            {
+                handleRagdoll.ragdollPart.ragdoll.isGrabbed = false;
             }
         }
 
@@ -43,7 +48,7 @@ namespace UndyingWave
             {
                 if (!handleRagdoll.ragdollPart.isSliced)
                 {
-                    this.Refresh();
+                    Refresh();
                     if (handleRagdoll.ragdollPart.rb.velocity.magnitude >= this.grabThrowMinVelocity)
                     {
                         this.creature.ragdoll.SetState(Ragdoll.State.Destabilized);
@@ -51,7 +56,7 @@ namespace UndyingWave
                 }
 
                 handlers.Remove(ragdollHand);
-            }      
+            }
         }
     }
 }
