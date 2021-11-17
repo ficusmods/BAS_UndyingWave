@@ -10,7 +10,7 @@
         {
           "$type": "UndyingWave.LoadModule, UndyingWave",
           "mod_name": "UndyingWave",
-          "mod_version": "1.2",
+          "mod_version": "1.3",
           "logger_level": "Basic",
           
           "dieOnHeadChop": true
