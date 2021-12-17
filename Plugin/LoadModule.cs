@@ -15,8 +15,17 @@ namespace UndyingWave
         public string mod_version = "0.0";
         public string mod_name = "UnnamedMod";
         public string logger_level = "Basic";
-
-        public bool dieOnHeadChop = true;
+        public bool dieOnHeadChop
+        {
+            get
+            {
+                return Config.dieOnHeadChop;
+            }
+            set
+            {
+                Config.dieOnHeadChop = value;
+            }
+        }
 
         public override IEnumerator OnLoadCoroutine()
         {
@@ -36,7 +45,6 @@ namespace UndyingWave
                     if (creature.data.id.StartsWith("Undying"))
                     {
                         var uc = creature.gameObject.AddComponent<UndyingCreatureModule>();
-                        uc.dieOnHeadChop = dieOnHeadChop;
                     }
                 }
             }

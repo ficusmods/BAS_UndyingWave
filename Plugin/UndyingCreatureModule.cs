@@ -11,7 +11,6 @@ namespace UndyingWave
 {
     public class UndyingCreatureModule : MonoBehaviour
     {
-        public bool dieOnHeadChop = true;
         public Creature creature;
 
         private void Awake()
@@ -41,7 +40,7 @@ namespace UndyingWave
 
         private bool cant_think_straight()
         {
-            if (!this.dieOnHeadChop) return false;
+            if (!Config.dieOnHeadChop) return false;
             if (this.creature.ragdoll.state == Ragdoll.State.NoPhysic
                 || this.creature.ragdoll.state == Ragdoll.State.Disabled
                 || this.creature.ragdoll.state == Ragdoll.State.Kinematic)
