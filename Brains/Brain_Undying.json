@@ -31,12 +31,17 @@
       "speakOnAttackCast": false,
       "speakOnAttackBow": false,
       "speakOnChoke": false,
+      "neckStabSilencelevel": 1,
+      "headStabSilenceLevel": 1,
+      "backStabSilenceLevel": 1,
       "randomSpeakIdleChance": 0.0,
       "randomSpeakAlertChance": 0.0,
       "randomSpeakInvestigateChance": 0.0,
       "randomSpeakCombatChance": 0.0,
       "randomSpeakDelay": 5.0,
-      "speakLoudness": 0.0
+      "muffleSpeakDelay": 1.5,
+      "speakLoudness": 0.0,
+      "isMuffled": false
     },
     {
       "$type": "ThunderRoad.BrainModuleMove, ThunderRoad",
@@ -48,11 +53,13 @@
       "strafeMinDelay": 0.0,
       "strafeMaxDelay": 2.0,
       "samplePositionCircleSteps": 6,
+      "tooCloseDistance": 0.7,
       "locomotionOverride": false,
-      "locomotionSpeedMultiplier": 1.0,
+      "locomotionForwardSpeedMultiplier": 1.0,
       "locomotionBackwardSpeedMultiplier": 1.0,
       "locomotionStrafeSpeedMultiplier": 1.0,
-      "locomotionRunSpeedMultiplier": 1.0
+      "locomotionRunSpeedMultiplier": 1.0,
+      "turnOffsetDegrees": 0.0
     },
     {
       "$type": "ThunderRoad.BrainModuleMelee, ThunderRoad",
@@ -60,54 +67,83 @@
       "attackMaxAngle": 45.0,
       "attackTurnSpeedMultiplier": 1.0,
       "maxRangeDelta": 0.2,
-      "attackMinDelay": 0.0,
-      "attackMaxDelay": 0.0,
-      "recoilOnParry": true,
+      "damageToCancelIsPercentValue": true,
+      "minimumDamageToCancelAttack": 5.0,
       "recoilMinWeaponSpeed": 1.0,
-      "meleeMax": 4,
+      "recoilNothingRiposteChance": {
+        "x": 0.0,
+        "y": 0.1
+      },
+      "recoilNothingRiposteModifier": {
+        "x": 0.05,
+        "y": 0.2
+      },
+      "minMaxRiposteDelay": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "riposteSpeedAdditiveModifier": -0.05,
+      "physicCullBlockMinimum": 0.1,
+      "damagedIgnoreDefenseWindow": 0.75,
+      "meleeMax": 2,
       "weaponReachRatio": 0.75,
+      "updateClipRange": false,
       "armSpringMultiplier": 2.0,
       "armDamperMultiplier": 0.0,
       "armMaxForceMultiplier": 10.0,
-      "animationSpeedMultiplier": 1.1,
+      "minMaxPhysicCullWeaponSpeed": {
+        "x": 2.5,
+        "y": 25.0
+      },
+      "animationSpeedMultiplier": 1.2,
       "defaultAnimationId": "HumanMelee1h",
-      "sword1hAnimationId": "HumanMelee1h",
+      "sword1hAnimationId": "HumanMelee1hOverhaul",
+      "sword1hComboOnBody": "Disabled",
       "shieldAnimationId": "HumanMelee1hShield",
-      "dualAnimationId": "HumanMeleeDual",
-      "staffAnimationId": "HumanMeleeStaff"
+      "shieldComboOnBody": "Disabled",
+      "dualAnimationId": "HumanMeleeDualOverhaul",
+      "dualComboOnBody": "Always",
+      "staffAnimationId": "HumanMeleeStaff",
+      "staffComboOnBody": "Disabled",
+      "minMaxTimeBetweenAttack": {
+        "x": 0.0,
+        "y": 1.5
+      },
+      "moduleStance": null,
+      "moduleMove": null,
+      "moduleEquipment": null,
+      "moduleDetection": null
     },
     {
       "$type": "ThunderRoad.BrainModuleBow, ThunderRoad",
-      "aimSpreadAngle": 0.1,
-      "bowAimMinMaxDelay": {
-        "x": 2.0,
-        "y": 6.0
-      },
-      "maxShootAngle": 10.0,
-      "maxAimAngle": 30.0,
-      "turnSpeed": 1.0,
-      "aimSpeed": 10.0,
-      "shootMinMaxDelay": {
-        "x": 0.0,
-        "y": 2.0
-      },
+      "maxShootAngle": 1.0,
       "arrowDrawDelay": 0.5,
       "arrowNockDelay": 1.0,
       "bowDrawDelay": 1.0,
       "aimHitDropDelay": 0.1,
-      "aimStaticPosOffset": {
-        "x": 0.2,
-        "y": -0.2,
-        "z": -0.05
+      "elbowIKGoal": {
+        "x": 2.0,
+        "y": 0.05,
+        "z": -0.2
       },
-      "aimMovePosOffset": {
-        "x": 0.3,
-        "y": -0.2,
-        "z": 0.0
+      "aimMaxAngleHorizontal": 30.0,
+      "aimMoveSpeed": 10.0,
+      "turnSpeed": 1.0,
+      "minMaxTimeToAttackFromAim": {
+        "x": 0.0,
+        "y": 4.0
       },
-      "aimRotationAngle": -20.0,
-      "shootVelocity": 22.0,
-      "maxPullRatio": 0.7
+      "aimArmSpringMultiplier": 0.5,
+      "minMaxTimeBetweenAttack": {
+        "x": 4.0,
+        "y": 8.0
+      },
+      "shootData": null,
+      "aimTime": 0.0,
+      "moduleMove": null,
+      "moduleLook": null,
+      "moduleEquipment": null,
+      "moduleStance": null
     },
     {
       "$type": "ThunderRoad.BrainModuleCast, ThunderRoad",
@@ -115,12 +151,44 @@
         "x": 4.0,
         "y": 5.0
       },
-      "aimArmLenghtMultiplier": 1.3,
+      "aimArmLengthMultiplier": 1.25,
       "minMana": 5.0,
       "maxAimAngle": 50.0,
+      "chargeDurationMultiplier": 1.0,
       "usePositionIK": true,
       "useRotationIK": false,
-      "delayIk": 0.6,
+      "IKAdjustCurve": {
+        "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+        "keys": [
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.0,
+            "value": 0.0,
+            "inTangent": 0.00225301669,
+            "outTangent": 0.00225301669,
+            "inWeight": 0.0,
+            "outWeight": 1.0,
+            "weightedMode": "Out",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 1.0,
+            "value": 1.0,
+            "inTangent": 0.0934469849,
+            "outTangent": 0.0934469849,
+            "inWeight": 0.580180168,
+            "outWeight": 0.0,
+            "weightedMode": "In",
+            "tangentMode": 0
+          }
+        ],
+        "length": 2,
+        "preWrapMode": "ClampForever",
+        "postWrapMode": "ClampForever"
+      },
+      "IKMaxWeight": 0.7,
+      "throwEarlyRelease": 0.1,
       "spreadCone": {
         "x": 0.6,
         "y": 0.6
@@ -141,37 +209,107 @@
     },
     {
       "$type": "ThunderRoad.BrainModuleLookAt, ThunderRoad",
-      "fadeSpeed": 1.0,
-      "adjustBodyWeight": false,
-      "aboveWeightChangeSpeed": 1.0,
-      "aboveClampHeight": 1.0,
-      "aboveMaxHeight": 0.25,
-      "bodyWeight": 1.0,
-      "headWeight": 1.0,
-      "eyesWeight": 1.0,
-      "clampWeightBody": 0.7,
-      "clampWeightHead": 0.75,
-      "clampWeightEyes": 0.95
+      "weightChangeSpeed": 2.0,
+      "defaultBlendTime": 0.5,
+      "defaultBlendCurve": {
+        "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+        "keys": [
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.0,
+            "value": 0.0,
+            "inTangent": 278.154449,
+            "outTangent": 278.154449,
+            "inWeight": 0.0,
+            "outWeight": 0.00360360369,
+            "weightedMode": "Out",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 1.0,
+            "value": 1.0,
+            "inTangent": 0.0,
+            "outTangent": 0.0,
+            "inWeight": 0.3963964,
+            "outWeight": 0.0,
+            "weightedMode": "In",
+            "tangentMode": 0
+          }
+        ],
+        "length": 2,
+        "preWrapMode": "ClampForever",
+        "postWrapMode": "ClampForever"
+      },
+      "snapPreventionAngle": 30.0,
+      "torso": {
+        "$type": "ThunderRoad.BrainModuleLookAt+IKWeight, ThunderRoad",
+        "clampWeight": 0.7,
+        "targetWeight": 0.0
+      },
+      "head": {
+        "$type": "ThunderRoad.BrainModuleLookAt+IKWeight, ThunderRoad",
+        "clampWeight": 0.75,
+        "targetWeight": 0.0
+      },
+      "eyes": {
+        "$type": "ThunderRoad.BrainModuleLookAt+IKWeight, ThunderRoad",
+        "clampWeight": 0.95,
+        "targetWeight": 0.0
+      },
+      "spine": {
+        "$type": "ThunderRoad.BrainModuleLookAt+IKWeight, ThunderRoad",
+        "clampWeight": 0.9,
+        "targetWeight": 0.0
+      }
     },
     {
       "$type": "ThunderRoad.BrainModuleDetection, ThunderRoad",
       "sightDetectionFov": 120.0,
       "sightMaxHeight": 5.0,
+      "canSeeLights": true,
+      "sawLightRememberDuration": 30.0,
+      "sawTKGrabRememberDuration": 30.0,
       "underSpellFireMaxAngle": 50.0,
+      "acquireSharedTargetDelay": 3.0,
       "canHear": true,
       "hearMaxDistance": 15.0,
       "hearMinNoiseRatio": 0.25,
       "hearRememberDuration": 30.0,
       "detectAlertednessThreshold": 10.0,
+      "alertednessDecreaseDelay": 1.0,
       "alertednessLossPerSec": 1.0,
-      "enemyInFOVCycleValue": 3.33,
-      "soundHeardScalableCycleValue": 6.66,
+      "minAlertednessIncrease": 0.05,
+      "minMaxEnemyInFOVByRangePerSec": {
+        "x": 2.0,
+        "y": 10.0
+      },
+      "rangeCurvePower": 0.5,
+      "crouchingMultiplier": 0.6666,
+      "soundHeardScalableValue": 6.66,
+      "dynamicLightIncreasePerSec": 5.0,
+      "TKItemMultiplier": 0.8,
+      "TKRagdollMultiplier": 1.5,
+      "maxAlertednessValue": 15.0,
+      "ignoreTouchByRagdollChance": 0.25,
+      "handTouchOnHolsterModifier": 3.2,
+      "ignoreTouchByItemChance": 0.1,
+      "minMaxTouchReactDelay": {
+        "x": 0.0,
+        "y": 0.1
+      },
+      "pickpocketDetectionChance": 0.75,
+      "minMaxPickpocketDetectionDelay": {
+        "x": 1.0,
+        "y": 3.0
+      },
       "defenseColliderRadius": 0.6,
-      "defenseColliderHeightMultiplier": 1.0
+      "defenseColliderHeightMultiplier": 1.0,
+      "defenseColliderRotation": 13.0
     },
     {
       "$type": "ThunderRoad.BrainModuleDodge, ThunderRoad",
-      "enabled": true,
+      "enabled": false,
       "dodgeStabForce": true,
       "dodgeChance": 0.1,
       "dodgeStabMaxAngle": 20.0,
@@ -179,12 +317,13 @@
       "dodgeThreatDistance": 0.7,
       "dodgeForceDistance": 0.25,
       "dodgeMaxHeight": 0.2,
+      "dodgeSpeed": 1.0,
       "dodgeWhenGrabbed": false,
       "dodgeWhenWeaponGrabbed": false
     },
     {
       "$type": "ThunderRoad.BrainModuleParry, ThunderRoad",
-      "enabled": true,
+      "enabled": false,
       "parryOnSpell": true,
       "parryOnThreat": true,
       "parryMaxDistance": 8.0,
@@ -224,7 +363,7 @@
       }
     },
     {
-      "$type": "UndyingWave.BrainModuleGrabbed, UndyingWave",
+      "$type": "ThunderRoad.BrainModuleGrabbed, ThunderRoad",
       "freeOneHand": true,
       "freeOneHandDelay": 2.0,
       "freeBothHand": true,
@@ -233,6 +372,8 @@
     },
     {
       "$type": "ThunderRoad.BrainModuleHitReaction, ThunderRoad",
+      "recoverySpeed": 1.1,
+      "parryRecoilCooldown": 1.0,
       "staggerLight": 0.2,
       "staggerMedium": 0.6,
       "jumpFootHeightThreshold": 0.1,
@@ -408,7 +549,10 @@
           "duringAttack": "Destabilize",
           "duringAttackJump": "Destabilize"
         }
-      ]
+      ],
+      "maxPushMagicBehaviourLevel": 0.0,
+      "maxPushGrabThrowBehaviourLevel": 0.0,
+      "maxPushHitBehaviourLevel": 0.0
     },
     {
       "$type": "ThunderRoad.BrainModuleDeath, ThunderRoad",
@@ -470,9 +614,19 @@
       "sightThickness": 0.1,
       "sightDetectionMaxDistance": 20.0,
       "sightMaxDistance": 30.0,
+      "minMaxBrightness": {
+        "x": 0.0,
+        "y": 0.25
+      },
       "shootPointSightThickness": 0.0,
       "sightableRagdollParts": [
-        "TargetPart"
+        "TargetPart",
+        "HeadPart",
+        "RootPart",
+        "HandRightPart",
+        "HandLeftPart",
+        "FootRightPart",
+        "FootLeftPart"
       ],
       "shootPositionCircleSteps": 15,
       "shootPositionDepthSteps": 4,
@@ -483,7 +637,302 @@
       "debug": false
     },
     {
-      "$type": "ThunderRoad.BrainModuleStance, ThunderRoad"
+      "$type": "ThunderRoad.BrainModuleStance, ThunderRoad",
+      "subStanceSwitchTime": 0.4,
+      "switchCurve": {
+        "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+        "keys": [
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.0,
+            "value": 0.0,
+            "inTangent": 0.276203036,
+            "outTangent": 0.276203036,
+            "inWeight": 0.0,
+            "outWeight": 0.5133706,
+            "weightedMode": "Both",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.472635269,
+            "value": 0.7208856,
+            "inTangent": 2.04467,
+            "outTangent": 2.04467,
+            "inWeight": 0.333333343,
+            "outWeight": 0.25835216,
+            "weightedMode": "Both",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 1.0,
+            "value": 1.0,
+            "inTangent": 0.0,
+            "outTangent": -0.0121197421,
+            "inWeight": 0.2556348,
+            "outWeight": 0.0,
+            "weightedMode": "Both",
+            "tangentMode": 1
+          }
+        ],
+        "length": 3,
+        "preWrapMode": "ClampForever",
+        "postWrapMode": "ClampForever"
+      },
+      "minMaxTimeBetweenChangeSubStance": {
+        "x": 5.0,
+        "y": 10.0
+      },
+      "forceHoldUpperOff": false,
+      "switching": false,
+      "currentSubStance": "None",
+      "allowedSubStances": []
+    },
+    {
+      "$type": "ThunderRoad.BrainModuleThrow, ThunderRoad",
+      "rockThrowEnabled": true,
+      "rockSpawnPositioning": {
+        "x": -0.25,
+        "y": -0.1,
+        "z": 0.4
+      },
+      "rockGrabIKDelay": 0.6,
+      "rockGrabTime": 0.5507246,
+      "moduleEquipment": null,
+      "moduleMove": null,
+      "aimMaxAngleHorizontal": 30.0,
+      "aimMoveSpeed": 10.0,
+      "turnSpeed": 1.0,
+      "minMaxTimeToAttackFromAim": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "aimArmSpringMultiplier": 0.5,
+      "minMaxTimeBetweenAttack": {
+        "x": 4.0,
+        "y": 8.0
+      },
+      "aimTime": 0.0,
+      "moduleLook": null,
+      "moduleStance": null
+    },
+    {
+      "$type": "ThunderRoad.BrainModuleCrossbow, ThunderRoad",
+      "maxShootAngle": 1.0,
+      "pullWireAnimation": null,
+      "aimMaxAngleHorizontal": 30.0,
+      "aimMoveSpeed": 10.0,
+      "turnSpeed": 1.0,
+      "minMaxTimeToAttackFromAim": {
+        "x": 0.0,
+        "y": 4.0
+      },
+      "aimArmSpringMultiplier": 0.5,
+      "minMaxTimeBetweenAttack": {
+        "x": 4.0,
+        "y": 8.0
+      },
+      "shootData": null,
+      "aimTime": 0.0,
+      "moduleMove": null,
+      "moduleLook": null,
+      "moduleEquipment": null,
+      "moduleStance": null
+    },
+    {
+      "$type": "ThunderRoad.BrainModuleFirearm, ThunderRoad",
+      "maxShootAngle": 1.0,
+      "aimMaxAngleHorizontal": 30.0,
+      "aimMoveSpeed": 10.0,
+      "turnSpeed": 1.0,
+      "minMaxTimeToAttackFromAim": {
+        "x": 0.0,
+        "y": 4.0
+      },
+      "aimArmSpringMultiplier": 0.5,
+      "minMaxTimeBetweenAttack": {
+        "x": 4.0,
+        "y": 8.0
+      },
+      "shootDataMain": null,
+      "mainFirearmData": null,
+      "mainHandAnchor": null,
+      "shootDataOffhand": null,
+      "offhandFirearmData": null,
+      "offhandAnchor": null,
+      "aimTime": 0.0,
+      "moduleMove": null,
+      "moduleLook": null,
+      "moduleEquipment": null,
+      "moduleStance": null
+    },
+    {
+      "$type": "ThunderRoad.BrainModuleFollow, ThunderRoad",
+      "followBehavior": "OnlyWhenSet",
+      "clearFollowBrainStates": [],
+      "allowFollowers": true,
+      "maxFollowers": 3
+    },
+    {
+      "$type": "ThunderRoad.BrainModuleDefense, ThunderRoad",
+      "enabled": true,
+      "parryEnabled": true,
+      "aboutToBeHitTiming": 0.1,
+      "minMaxIncomingAttackSpeed": {
+        "x": 2.5,
+        "y": 6.0
+      },
+      "dangerLevelDecreaseTime": 0.5,
+      "defenseMaxDistance": 8.0,
+      "parryDetectionRadius": 5.0,
+      "parryHorizontalMaxAngle": 60.0,
+      "parryCircleHeight": 0.64,
+      "parryCircleRadius": 0.64,
+      "parryAdjustSpeed": 5.0,
+      "riposteBlockRequirement": 0.5,
+      "thrustSensitivityVelocity": 0.8,
+      "thrustSensitivityDirection": 0.8,
+      "minimumThrustVelocity": 1.0,
+      "lookAtIncomingMaxAngle": 45.0,
+      "deflectEnabled": true,
+      "deflectAdjustSpeed": 15.0,
+      "deflectTurnSpeedRatio": 4.0,
+      "deflectTurnOffset": 5.0,
+      "deflectForce": 40.0,
+      "deflectLingerForce": 250.0,
+      "deflectLingerForceCurve": {
+        "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+        "keys": [
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.0,
+            "value": 1.0,
+            "inTangent": -0.0157637671,
+            "outTangent": -0.0157637671,
+            "inWeight": 0.0,
+            "outWeight": 0.1027027,
+            "weightedMode": "None",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.75,
+            "value": 0.0,
+            "inTangent": -3.996429,
+            "outTangent": -3.996429,
+            "inWeight": 0.0694675446,
+            "outWeight": 0.333333343,
+            "weightedMode": "None",
+            "tangentMode": 0
+          }
+        ],
+        "length": 2,
+        "preWrapMode": "ClampForever",
+        "postWrapMode": "ClampForever"
+      },
+      "stanceDeflectSettings": [
+        {
+          "$type": "ThunderRoad.BrainModuleDefense+ThrustDeflectSettings, ThunderRoad",
+          "stance": "Melee1H",
+          "preparationStance": {
+            "x": 0.5,
+            "y": 0.8,
+            "z": 0.0
+          },
+          "deflectMaxAngle": 20.0,
+          "deflectAngleOffset": 10.0,
+          "maxDeflectHeight": 0.4,
+          "deflectHeightOffset": -0.4,
+          "deflectDistance": 1.1
+        },
+        {
+          "$type": "ThunderRoad.BrainModuleDefense+ThrustDeflectSettings, ThunderRoad",
+          "stance": "DualWield",
+          "preparationStance": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "deflectMaxAngle": 14.0,
+          "deflectAngleOffset": 0.0,
+          "maxDeflectHeight": 0.4,
+          "deflectHeightOffset": -0.4,
+          "deflectDistance": 1.1
+        }
+      ],
+      "dodgeEnabled": true,
+      "dodgeChanceCurve": {
+        "$type": "UnityEngine.AnimationCurve, UnityEngine.CoreModule",
+        "keys": [
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.0,
+            "value": 0.25,
+            "inTangent": -0.000771741266,
+            "outTangent": -0.000771741266,
+            "inWeight": 0.0,
+            "outWeight": 0.6678679,
+            "weightedMode": "Both",
+            "tangentMode": 0
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 0.75,
+            "value": 0.7,
+            "inTangent": 0.00131816161,
+            "outTangent": 0.008136737,
+            "inWeight": 0.3297297,
+            "outWeight": 0.769369364,
+            "weightedMode": "Both",
+            "tangentMode": 1
+          },
+          {
+            "$type": "UnityEngine.Keyframe, UnityEngine.CoreModule",
+            "time": 1.0,
+            "value": 0.0,
+            "inTangent": -2.8,
+            "outTangent": -2.8,
+            "inWeight": 0.333333343,
+            "outWeight": 0.333333343,
+            "weightedMode": "None",
+            "tangentMode": 34
+          }
+        ],
+        "length": 3,
+        "preWrapMode": "ClampForever",
+        "postWrapMode": "ClampForever"
+      },
+      "dodgeSpeed": 1.0,
+      "dodgeMaxHeight": 0.2,
+      "dodgeWhenGrabbed": false,
+      "dodgeWhenWeaponGrabbed": false,
+      "physicsCullParryBias": 10.0,
+      "turnSpeedRatio": 1.0,
+      "heldDefenseMinRadius": 0.5,
+      "heldDefenseMaxRadius": 2.0,
+      "longDefenseMinRadius": 1.0,
+      "longDefenseMaxRadius": 5.0,
+      "shieldUsesIK": true,
+      "shieldMaxIKWeight": 0.8,
+      "positionSpeed": 1.7,
+      "rotationSpeed": 300.0,
+      "dynamicHeightOffset": 0.1,
+      "armSpringMultiplier": 1.0,
+      "armMaxForceMultiplier": 10.0,
+      "shieldTransform": null,
+      "shieldAnchor": null,
+      "shieldHoldPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "shieldHoldRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
     }
   ]
 }

@@ -9,7 +9,8 @@
     "operation": "AND",
     "ifConditions": [
       {
-        "$type": "ThunderRoad.AI.Condition.IsUnarmed, ThunderRoad"
+        "$type": "ThunderRoad.AI.Condition.IsUnarmed, ThunderRoad",
+        "isMainHandCheck": false
       }
     ],
     "ifNotConditions": null,
@@ -23,19 +24,22 @@
           "childs": [
             {
               "$type": "ThunderRoad.AI.Action.SetStance, ThunderRoad",
-              "stance": "Flee"
+              "stance": "Flee",
+              "onlyOnce": false,
+              "setSubStance": "Random",
+              "excludeCurrent": true,
+              "subStanceName": "",
+              "blackboard": null,
+              "creature": null,
+              "brainData": null
             },
             {
-              "$type": "ThunderRoad.AI.Action.SetParry, ThunderRoad",
-              "enabled": false,
-              "target": "CurrentTarget",
-              "inputCreatureVariableName": ""
-            },
-            {
-              "$type": "ThunderRoad.AI.Action.SetDodge, ThunderRoad",
-              "dodgeBehaviour": "Always",
-              "target": "CurrentTarget",
-              "inputCreatureVariableName": ""
+              "$type": "ThunderRoad.AI.Action.SetDefenseState, ThunderRoad",
+              "parry": false,
+              "dodge": true,
+              "blackboard": null,
+              "creature": null,
+              "brainData": null
             },
             {
               "$type": "ThunderRoad.AI.Decorator.IfCondition, ThunderRoad",
@@ -49,14 +53,26 @@
               ],
               "child": {
                 "$type": "ThunderRoad.AI.Get.GetItem, ThunderRoad",
+                "searchRadius": 30.0,
+                "checkID": false,
+                "itemID": "",
+                "checkType": true,
                 "type": "Weapon",
+                "checkClass": true,
                 "weaponClass": "Melee",
+                "checkHandling": true,
                 "weaponHandling": "OneHanded",
+                "checkGrabbableSide": true,
                 "handleSide": "Right",
                 "avoidTargetRadius": 4.0,
                 "useShortestPath": true,
+                "outputItemVariableName": "",
+                "outputItemTransformVariableName": "",
                 "outputItemHandleVariableName": "WeaponHandleToGrab",
-                "outputItemHandleTransformVariableName": "WeaponHandleToGrabTransform"
+                "outputItemHandleTransformVariableName": "WeaponHandleToGrabTransform",
+                "blackboard": null,
+                "creature": null,
+                "brainData": null
               }
             },
             {
@@ -69,7 +85,10 @@
                   "pickupIKDuration": 0.75,
                   "pickupDuration": 1.05,
                   "useIK": false,
-                  "pickupAnimationId": "HumanPickup"
+                  "pickupAnimationId": "HumanPickup",
+                  "blackboard": null,
+                  "creature": null,
+                  "brainData": null
                 },
                 {
                   "$type": "ThunderRoad.AI.Action.MoveTo, ThunderRoad",
@@ -102,7 +121,10 @@
                   "angleMode": "None",
                   "changeAngleUntilUnobstructed": false,
                   "targetRadiusMinAngle": 0.0,
-                  "targetRadiusMaxAngle": 0.0
+                  "targetRadiusMaxAngle": 0.0,
+                  "blackboard": null,
+                  "creature": null,
+                  "brainData": null
                 }
               ]
             }
