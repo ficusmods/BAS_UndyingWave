@@ -2,6 +2,8 @@
   "$type": "ThunderRoad.AI.BehaviorTreeData, ThunderRoad",
   "id": "UndyingCombat",
   "saveFolder": "bas",
+  "sensitiveContent": "None",
+  "sensitiveFilterBehaviour": "Discard",
   "version": 0,
   "type": "SubTree",
   "rootNode": {
@@ -52,10 +54,10 @@
                       "operation": "AND",
                       "ifConditions": [
                         {
-                          "$type": "ThunderRoad.AI.Condition.SpawnTimeCompare, ThunderRoad",
-                          "comparison": "LessThanOrEqual",
-                          "timeSinceSpawn": 3.0,
-                          "maxDiff": 0.0
+                          "$type": "ThunderRoad.AI.Condition.BlackboardTimeValue, ThunderRoad",
+                          "variableName": "BrainStart",
+                          "variableComparator": "LowerThanOrEqual",
+                          "timeDiff": 3.0
                         }
                       ],
                       "ifNotConditions": null,
@@ -65,9 +67,9 @@
                           "x": 0.0,
                           "y": 1.0
                         },
-                        "forwardMoveSpeed": 1.0,
+                        "moveSpeedRatio": 0.7,
                         "turnSpeed": 0.0,
-                        "moveMinDuration": 1.1,
+                        "moveMinDuration": 0.7,
                         "stuckRadius": 0.1,
                         "stuckMaxDuration": 5.0,
                         "blackboard": null,
@@ -97,9 +99,11 @@
                 "damageCondition": "Either",
                 "factionCondition": "OnlyEnemy",
                 "typeCondition": "AnyTouch",
+                "bodyStateCondition": "StandingAlive",
                 "rememberDuration": 20.0,
                 "outputCreatureAsCurrentTarget": true,
                 "outputCreatureVariableName": "",
+                "outputPartTransformVariableName": "",
                 "blackboard": null,
                 "creature": null,
                 "brainData": null
@@ -155,6 +159,11 @@
               "bodyBehaviour": "UseLookIK",
               "target": "InputTransform",
               "inputVariableName": "CurrentTargetEyes",
+              "localOffset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
               "blackboard": null,
               "creature": null,
               "brainData": null
@@ -172,6 +181,13 @@
               "y": 5.0
             },
             "succeedOnCooldown": true,
+            "blackboard": null,
+            "creature": null,
+            "brainData": null
+          },
+          {
+            "$type": "ThunderRoad.AI.Action.InterruptIdle, ThunderRoad",
+            "alwaysFullInterrupt": true,
             "blackboard": null,
             "creature": null,
             "brainData": null
@@ -207,6 +223,11 @@
                   "bodyBehaviour": "BodyUpright",
                   "target": "InputTransform",
                   "inputVariableName": "CurrentTargetEyes",
+                  "localOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
                   "blackboard": null,
                   "creature": null,
                   "brainData": null
@@ -223,10 +244,10 @@
                 "operation": "AND",
                 "ifConditions": [
                   {
-                    "$type": "ThunderRoad.AI.Condition.SpawnTimeCompare, ThunderRoad",
-                    "comparison": "GreaterOrEqual",
-                    "timeSinceSpawn": 5.0,
-                    "maxDiff": 0.0
+                    "$type": "ThunderRoad.AI.Condition.BlackboardTimeValue, ThunderRoad",
+                    "variableName": "BrainStart",
+                    "variableComparator": "GreaterThanOrEqual",
+                    "timeDiff": 5.0
                   }
                 ],
                 "ifNotConditions": null,
@@ -250,15 +271,14 @@
                 "approachTurnSpeedRatio": 1.0,
                 "approachRunSpeedRatio": 1.0,
                 "moveCloserIfNoSight": false,
-                "stuckRadius": 0.1,
-                "stuckMaxDuration": 5.0,
                 "strafeAroundTarget": false,
                 "strafeMoveSpeedRatio": 0.75,
                 "strafeTurnSpeedRatio": 1.0,
                 "strafeRunSpeedRatio": 0.0,
                 "checkMaxAllies": false,
-                "firstToSecondRadiusDistance": 2.0,
-                "secondRadiusRange": 2.0,
+                "safeRangeOffset": 0.25,
+                "safeRangeThickness": 2.0,
+                "reportUnreachable": false,
                 "useModuleStrafeDelay": false,
                 "repathMinDelay": 0.0,
                 "repathMaxDelay": 0.0,
@@ -323,10 +343,10 @@
                 "operation": "AND",
                 "ifConditions": [
                   {
-                    "$type": "ThunderRoad.AI.Condition.SpawnTimeCompare, ThunderRoad",
-                    "comparison": "LessThanOrEqual",
-                    "timeSinceSpawn": 3.0,
-                    "maxDiff": 0.0
+                    "$type": "ThunderRoad.AI.Condition.BlackboardTimeValue, ThunderRoad",
+                    "variableName": "BrainStart",
+                    "variableComparator": "LowerThanOrEqual",
+                    "timeDiff": 3.0
                   }
                 ],
                 "ifNotConditions": null,
@@ -336,9 +356,9 @@
                     "x": 0.0,
                     "y": 1.0
                   },
-                  "forwardMoveSpeed": 1.0,
+                  "moveSpeedRatio": 0.7,
                   "turnSpeed": 0.0,
-                  "moveMinDuration": 1.1,
+                  "moveMinDuration": 0.7,
                   "stuckRadius": 0.1,
                   "stuckMaxDuration": 5.0,
                   "blackboard": null,

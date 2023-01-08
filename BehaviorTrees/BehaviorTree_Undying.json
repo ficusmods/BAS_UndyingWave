@@ -23,6 +23,17 @@
         }
       },
       {
+        "$type": "ThunderRoad.AI.Decorator.AlwaysFailure, ThunderRoad",
+        "child": {
+          "$type": "ThunderRoad.AI.Action.SaveTimeInBlackboard, ThunderRoad",
+          "variableName": "BrainStart",
+          "onlyOnce": true,
+          "blackboard": null,
+          "creature": null,
+          "brainData": null
+        }
+      },
+      {
         "$type": "ThunderRoad.AI.Decorator.IfCondition, ThunderRoad",
         "operation": "AND",
         "ifConditions": [
